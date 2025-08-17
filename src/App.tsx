@@ -322,79 +322,82 @@ function App() {
 
       {/* Game Categories */}
       {/* Mobile carousel */}
-      <div className="sm:hidden">
-        <div className="relative overflow-hidden">
-          <div 
-            className="flex transition-transform duration-500 ease-in-out"
-            style={{ transform: `translateX(-${currentBannerIndex * 100}%)` }}
-          >
-            {/* LIMITEDS */}
-            <div className="w-full flex-shrink-0 px-2">
-              <a href="https://adurite.com/">
-                <div className="w-full h-40 sm:h-48 md:h-64 rounded-lg cursor-pointer overflow-hidden bg-black flex items-center justify-center">
-                  <img 
-                    src={limited}
-                    alt="Limiteds" 
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-              </a>
-            </div>
+      {/* Banner Section */}
+      {/* Banner Section */}
+      {/* Mobile Carousel */}
+      {/* Desktop Banner */}
+<div className="hidden md:flex justify-center space-x-4">
+  {/* LIMITEDS */}
+  <a href="https://adurite.com/">
+    <div className="w-32 h-24 rounded-lg overflow-hidden bg-black flex items-center justify-center">
+      <img src={limited} alt="Limiteds" className="w-full h-full object-cover" />
+    </div>
+  </a>
 
-            {/* CS:2 */}
-            <div className="w-full flex-shrink-0 px-2">
-              <a href="https://adurite.com/market/csgo">
-                <div className="w-full h-40 sm:h-48 md:h-64 rounded-lg cursor-pointer overflow-hidden bg-black flex items-center justify-center">
-                  <img 
-                    src={CS} 
-                    alt="CS:2" 
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-              </a>
-            </div>
+  {/* CS:2 */}
+  <a href="https://adurite.com/market/csgo">
+    <div className="w-32 h-24 rounded-lg overflow-hidden bg-black flex items-center justify-center">
+      <img src={CS} alt="CS:2" className="w-full h-full object-cover" />
+    </div>
+  </a>
 
-            {/* DOTA 2 */}
-            <div className="w-full flex-shrink-0 px-2">
-              <a href="https://adurite.com/market/dota2">
-                <div className="w-full h-40 sm:h-48 md:h-64 rounded-lg cursor-pointer overflow-hidden bg-black flex items-center justify-center">
-                  <img 
-                    src={DOTA} 
-                    alt="DOTA2" 
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-              </a>
-            </div>
+  {/* DOTA2 */}
+  <a href="https://adurite.com/market/dota2">
+    <div className="w-32 h-24 rounded-lg overflow-hidden bg-black flex items-center justify-center">
+      <img src={DOTA} alt="DOTA2" className="w-full h-full object-cover" />
+    </div>
+  </a>
 
-            {/* RUST */}
-            <div className="w-full flex-shrink-0 px-2">
-              <a href="https://adurite.com/market/rust">
-                <div className="w-full h-40 sm:h-48 md:h-64 rounded-lg cursor-pointer overflow-hidden bg-black flex items-center justify-center">
-                  <img 
-                    src={rust} 
-                    alt="Rust" 
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-              </a>
-            </div>
+  {/* Rust */}
+  <a href="https://adurite.com/market/rust">
+    <div className="w-32 h-24 rounded-lg overflow-hidden bg-black flex items-center justify-center">
+      <img src={rust} alt="Rust" className="w-full h-full object-cover" />
+    </div>
+  </a>
 
-            {/* IN-GAME */}
-            <div className="w-full flex-shrink-0 px-2">
-              <a href="https://roskins.com/">
-                <div className="w-full h-40 sm:h-48 md:h-64 rounded-lg cursor-pointer overflow-hidden bg-black flex items-center justify-center">
-                  <img 
-                    src={ingame} 
-                    alt="In-Game" 
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
+  {/* In-Game */}
+  <a href="https://roskins.com/">
+    <div className="w-32 h-24 rounded-lg overflow-hidden bg-black flex items-center justify-center">
+      <img src={ingame} alt="In-Game" className="w-full h-full object-cover" />
+    </div>
+  </a>
+</div>
+
+{/* Mobile Carousel */}
+<div className="block md:hidden overflow-x-auto">
+  <div className="flex flex-nowrap space-x-3">
+    {/* Same items but smaller */}
+    <a href="https://adurite.com/">
+      <div className="min-w-[8rem] h-24 rounded-lg overflow-hidden bg-black flex items-center justify-center">
+        <img src={limited} alt="Limiteds" className="w-full h-full object-cover" />
       </div>
+    </a>
+
+    <a href="https://adurite.com/market/csgo">
+      <div className="min-w-[8rem] h-24 rounded-lg overflow-hidden bg-black flex items-center justify-center">
+        <img src={CS} alt="CS:2" className="w-full h-full object-cover" />
+      </div>
+    </a>
+
+    <a href="https://adurite.com/market/dota2">
+      <div className="min-w-[8rem] h-24 rounded-lg overflow-hidden bg-black flex items-center justify-center">
+        <img src={DOTA} alt="DOTA2" className="w-full h-full object-cover" />
+      </div>
+    </a>
+
+    <a href="https://adurite.com/market/rust">
+      <div className="min-w-[8rem] h-24 rounded-lg overflow-hidden bg-black flex items-center justify-center">
+        <img src={rust} alt="Rust" className="w-full h-full object-cover" />
+      </div>
+    </a>
+
+    <a href="https://roskins.com/">
+      <div className="min-w-[8rem] h-24 rounded-lg overflow-hidden bg-black flex items-center justify-center">
+        <img src={ingame} alt="In-Game" className="w-full h-full object-cover" />
+      </div>
+    </a>
+  </div>
+</div>
 
       {/* Trustpilot Reviews */}
       <div className="bg-[#0e0e0e] border-b border-[#1a1a1a]">
