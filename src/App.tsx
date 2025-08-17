@@ -1,3 +1,14 @@
+import banner from './assets/banner-roblux.png'
+import CS from './assets/CS2.png'
+import discord from './assets/discord2logo.png'
+import DOTA from './assets/DOTA2.png'
+import ingame from './assets/ingame.png'
+import limited from './assets/limiteds.png'
+import logo from './assets/logo.png'
+import profilepic from './assets/profile-pic.png'
+import robluxface from './assets/roblux-face.png'
+import rust from './assets/rust.png'
+
 import { useState } from 'react';
 import { 
   MessageCircle, 
@@ -256,7 +267,7 @@ function App() {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <div className="flex items-center">
-              <img src="src/assets/logo.png" alt="logo" className="h-10 w-auto mr-2" />
+              <img src={logo} alt="logo" className="h-10 w-auto mr-2" />
             </div>
 
             {/* Navigation */}
@@ -295,7 +306,7 @@ function App() {
             {/* LIMITEDS */}
             <div className="w-40 h-24 rounded-lg cursor-pointer overflow-hidden transform hover:scale-105 transition-transform">
               <img 
-                src="src/assets/limiteds.png" 
+                src={limited}
                 alt="Limiteds" 
                 className="w-full h-full object-cover"
               />
@@ -304,7 +315,7 @@ function App() {
             {/* CS:2 */}
             <div className="w-40 h-24 rounded-lg cursor-pointer overflow-hidden transform hover:scale-105 transition-transform">
               <img 
-                src="src/assets/CS2.png" 
+                src={CS} 
                 alt="CS:2" 
                 className="w-full h-full object-cover"
               />
@@ -313,7 +324,7 @@ function App() {
             {/* DOTA 2 */}
             <div className="w-40 h-24 rounded-lg cursor-pointer overflow-hidden transform hover:scale-105 transition-transform">
               <img 
-                src="src/assets/DOTA2.png" 
+                src={DOTA} 
                 alt="DOTA2" 
                 className="w-full h-full object-cover"
               />
@@ -322,7 +333,7 @@ function App() {
             {/* RUST */}
             <div className="w-40 h-24 rounded-lg cursor-pointer overflow-hidden transform hover:scale-105 transition-transform">
               <img 
-                src="src/assets/rust.png" 
+                src={rust} 
                 alt="Rust" 
                 className="w-full h-full object-cover"
               />
@@ -331,7 +342,7 @@ function App() {
             {/* IN-GAME */}
             <div className="w-40 h-24 rounded-lg cursor-pointer overflow-hidden transform hover:scale-105 transition-transform">
               <img 
-                src="src/assets/ingame.png" 
+                src={ingame} 
                 alt="In-Game" 
                 className="w-full h-full object-cover"
               />
@@ -389,7 +400,7 @@ function App() {
       {/* Hero Section */}
       <div
         className="relative h-48 bg-cover bg-center"
-        style={{ backgroundImage: "url('src/assets/banner-roblux.png')" }}
+        style={{ backgroundImage: `url(${banner})` }}
       >
       </div>
 
@@ -421,7 +432,7 @@ function App() {
             {/* Image instead of icon */}
             <div className="w-full h-40 rounded-lg mb-4 overflow-hidden">
               <img 
-                src="src/assets/roblux-face.png" 
+                src={robluxface} 
                 alt="Silver Punk Face" 
                 className="w-full h-full object-cover"
               />
@@ -457,7 +468,7 @@ function App() {
             <div className="col-span-1 md:col-span-1">
               <div className="mb-4">
                 <img 
-                  src="src/assets/logo.png" 
+                  src={logo} 
                   alt="Adurite Logo" 
                   className="h-10 w-auto" 
                 />
