@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/adurite/",
+  base: "/Adurite/",
   plugins: [react()],
   optimizeDeps: {
     exclude: ['lucide-react'], // keep this if Bolt added it
