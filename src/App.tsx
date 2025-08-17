@@ -38,7 +38,7 @@ function App() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentBannerIndex((prev) => (prev + 1) % 5); // 5 banners total
-    }, 3000); // Change every 3 seconds
+    }, 1000); // Change every 3 seconds
 
     return () => clearInterval(interval);
   }, []);
@@ -47,7 +47,7 @@ function App() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentReviewIndex((prev) => (prev + 1) % 3); // 3 review items
-    }, 4000); // Change every 4 seconds
+    }, 1000); // Change every 4 seconds
 
     return () => clearInterval(interval);
   }, []);
@@ -321,153 +321,76 @@ function App() {
       </header>
 
       {/* Game Categories */}
-      <div className="bg-zinc-900 border-b border-gray-800">
-        <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8 py-4 sm:py-6">
-          {/* Desktop view */}
-          <div className="hidden sm:flex justify-center space-x-4">
-            
+      {/* Mobile carousel */}
+      <div className="sm:hidden">
+        <div className="relative overflow-hidden">
+          <div 
+            className="flex transition-transform duration-500 ease-in-out"
+            style={{ transform: `translateX(-${currentBannerIndex * 100}%)` }}
+          >
             {/* LIMITEDS */}
-            <a href="https://adurite.com/">
-              <div className="w-40 h-24 rounded-lg cursor-pointer overflow-hidden transform hover:scale-105 transition-transform">
-                <img 
-                  src={limited}
-                  alt="Limiteds" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </a>
+            <div className="w-full flex-shrink-0 px-2">
+              <a href="https://adurite.com/">
+                <div className="w-full h-40 sm:h-48 md:h-64 rounded-lg cursor-pointer overflow-hidden bg-black flex items-center justify-center">
+                  <img 
+                    src={limited}
+                    alt="Limiteds" 
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              </a>
+            </div>
 
             {/* CS:2 */}
-            <a href="https://adurite.com/market/csgo">
-              <div className="w-40 h-24 rounded-lg cursor-pointer overflow-hidden transform hover:scale-105 transition-transform">
-                <img 
-                  src={CS} 
-                  alt="CS:2" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </a>
+            <div className="w-full flex-shrink-0 px-2">
+              <a href="https://adurite.com/market/csgo">
+                <div className="w-full h-40 sm:h-48 md:h-64 rounded-lg cursor-pointer overflow-hidden bg-black flex items-center justify-center">
+                  <img 
+                    src={CS} 
+                    alt="CS:2" 
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              </a>
+            </div>
 
             {/* DOTA 2 */}
-            <a href="https://adurite.com/market/dota2">
-              <div className="w-40 h-24 rounded-lg cursor-pointer overflow-hidden transform hover:scale-105 transition-transform">
-                <img 
-                  src={DOTA} 
-                  alt="DOTA2" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </a>
+            <div className="w-full flex-shrink-0 px-2">
+              <a href="https://adurite.com/market/dota2">
+                <div className="w-full h-40 sm:h-48 md:h-64 rounded-lg cursor-pointer overflow-hidden bg-black flex items-center justify-center">
+                  <img 
+                    src={DOTA} 
+                    alt="DOTA2" 
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              </a>
+            </div>
 
             {/* RUST */}
-            <a href="https://adurite.com/market/rust">
-              <div className="w-40 h-24 rounded-lg cursor-pointer overflow-hidden transform hover:scale-105 transition-transform">
-                <img 
-                  src={rust} 
-                  alt="Rust" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </a>
+            <div className="w-full flex-shrink-0 px-2">
+              <a href="https://adurite.com/market/rust">
+                <div className="w-full h-40 sm:h-48 md:h-64 rounded-lg cursor-pointer overflow-hidden bg-black flex items-center justify-center">
+                  <img 
+                    src={rust} 
+                    alt="Rust" 
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              </a>
+            </div>
 
             {/* IN-GAME */}
-            <a href="https://roskins.com/">
-              <div className="w-40 h-24 rounded-lg cursor-pointer overflow-hidden transform hover:scale-105 transition-transform">
-                <img 
-                  src={ingame} 
-                  alt="In-Game" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </a>
-
-          </div>
-          
-          {/* Mobile carousel */}
-          <div className="sm:hidden">
-            <div className="relative overflow-hidden">
-              <div 
-                className="flex transition-transform duration-500 ease-in-out"
-                style={{ transform: `translateX(-${currentBannerIndex * 100}%)` }}
-              >
-                {/* LIMITEDS */}
-                <div className="w-full flex-shrink-0 px-2">
-                  <a href="https://adurite.com/">
-                    <div className="w-full h-32 rounded-lg cursor-pointer overflow-hidden">
-                      <img 
-                        src={limited}
-                        alt="Limiteds" 
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </a>
-                </div>
-
-                {/* CS:2 */}
-                <div className="w-full flex-shrink-0 px-2">
-                  <a href="https://adurite.com/market/csgo">
-                    <div className="w-full h-32 rounded-lg cursor-pointer overflow-hidden">
-                      <img 
-                        src={CS} 
-                        alt="CS:2" 
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </a>
-                </div>
-
-                {/* DOTA 2 */}
-                <div className="w-full flex-shrink-0 px-2">
-                  <a href="https://adurite.com/market/dota2">
-                    <div className="w-full h-32 rounded-lg cursor-pointer overflow-hidden">
-                      <img 
-                        src={DOTA} 
-                        alt="DOTA2" 
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </a>
-                </div>
-
-                {/* RUST */}
-                <div className="w-full flex-shrink-0 px-2">
-                  <a href="https://adurite.com/market/rust">
-                    <div className="w-full h-32 rounded-lg cursor-pointer overflow-hidden">
-                      <img 
-                        src={rust} 
-                        alt="Rust" 
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </a>
-                </div>
-
-                {/* IN-GAME */}
-                <div className="w-full flex-shrink-0 px-2">
-                  <a href="https://roskins.com/">
-                    <div className="w-full h-32 rounded-lg cursor-pointer overflow-hidden">
-                      <img 
-                        src={ingame} 
-                        alt="In-Game" 
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </a>
-                </div>
-              </div>
-              
-              {/* Dots indicator */}
-              <div className="flex justify-center mt-4 space-x-2">
-                {[0, 1, 2, 3, 4].map((index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentBannerIndex(index)}
-                    className={`w-2 h-2 rounded-full transition-colors ${
-                      currentBannerIndex === index ? 'bg-red-600' : 'bg-gray-600'
-                    }`}
+            <div className="w-full flex-shrink-0 px-2">
+              <a href="https://roskins.com/">
+                <div className="w-full h-40 sm:h-48 md:h-64 rounded-lg cursor-pointer overflow-hidden bg-black flex items-center justify-center">
+                  <img 
+                    src={ingame} 
+                    alt="In-Game" 
+                    className="w-full h-full object-contain"
                   />
-                ))}
-              </div>
+                </div>
+              </a>
             </div>
           </div>
         </div>
@@ -611,43 +534,51 @@ function App() {
       </div>
 
       {/* LIMITEDS Section */}
-      <main className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8 py-8 sm:py-12">
-        <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 sm:mb-8">LIMITEDS</h2>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-          <div 
-            className="group bg-[#1c1c1c] rounded-lg p-4 sm:p-6 cursor-pointer overflow-hidden relative"
-            onClick={() => setIsModalOpen(true)}
-          >
-            {/* Image instead of icon */}
-            <div className="w-full h-32 sm:h-40 rounded-lg mb-4 overflow-hidden bg-gray-800">
-              <img 
-                src={robluxface} 
-                alt="Silver Punk Face" 
-                className="w-full h-full object-contain"
-              />
-            </div>
+     <main className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8 py-8 sm:py-12">
+      <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 sm:mb-8">
+        LIMITEDS
+      </h2>
 
-            {/* Title */}
-            <h3 className="text-white font-semibold mb-2 text-sm sm:text-base">Silver Punk Face</h3>
-
-            {/* RAP & Price */}
-            <div className="flex justify-between items-center">
-              <div>
-                <div className="text-red-400 text-xs sm:text-sm font-semibold">RAP</div>
-                <div className="text-white font-bold text-sm sm:text-base">290K</div>
-              </div>
-              <div>
-                <div className="text-red-400 text-xs sm:text-sm font-semibold">Price</div>
-                <div className="text-white font-bold text-sm sm:text-base">$1,251</div>
-              </div>
-            </div>
-
-            {/* Animated bottom border */}
-            <span className="absolute left-0 bottom-0 h-1 bg-red-500 w-0 transition-all duration-300 group-hover:w-full"></span>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
+        <div
+          className="group bg-[#1c1c1c] rounded-lg p-3 sm:p-6 cursor-pointer overflow-hidden relative flex flex-col"
+          onClick={() => setIsModalOpen(true)}
+        >
+          {/* Image */}
+          <div className="w-full h-32 sm:h-40 rounded-lg mb-3 overflow-hidden bg-[#1c1c1c] flex items-center justify-center">
+            <img
+              src={robluxface}
+              alt="Silver Punk Face"
+              className="max-h-24 sm:max-h-36 object-contain"
+            />
           </div>
+
+          {/* Title */}
+          <h3 className="text-white font-semibold mb-2 text-sm sm:text-base text-center">
+            Silver Punk Face
+          </h3>
+
+          {/* RAP & Price */}
+          <div className="flex justify-between items-center text-center">
+            <div>
+              <div className="text-red-400 text-xs sm:text-sm font-semibold">RAP</div>
+              <div className="text-white font-bold text-sm sm:text-base">290K</div>
+            </div>
+            <div>
+              <div className="text-red-400 text-xs sm:text-sm font-semibold">Price</div>
+              <div className="text-white font-bold text-sm sm:text-base">$1,251</div>
+            </div>
+          </div>
+
+          {/* Animated bottom border */}
+          <span className="absolute left-0 bottom-0 h-1 bg-red-500 w-0 transition-all duration-300 group-hover:w-full"></span>
         </div>
-      </main>
+      </div>
+    </main>
+
+
+
+
 
       {/* Footer */}
       <footer className="bg-zinc-900 border-t border-gray-800 mt-16">
