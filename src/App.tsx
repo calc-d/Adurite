@@ -7,6 +7,11 @@ import limited from './assets/limiteds.png'
 import logo from './assets/logo.png'
 import robluxface from './assets/roblux-face.png'
 import rust from './assets/rust.png'
+import bitcoin from './assets/bitcoin.png'
+import litcoin from './assets/litcoin.png'
+import ethereum from './assets/etheruim.png'
+import crypto3 from './assets/crypto 3.png'
+import crypto4 from './assets/crypto4.png'
 
 import { useState } from 'react';
 import { 
@@ -135,14 +140,14 @@ function App() {
             </div>
 
             {/* Payment Methods */}
-            <div className="grid grid-cols-3 gap-4 mb-8">
+         <div className="grid grid-cols-3 gap-4 mb-8">
               {/* Bitcoin */}
               <button
                 onClick={() => handlePaymentSelect('bitcoin')}
                 className="bg-gray-800 hover:bg-gray-700 rounded-lg p-6 text-center transition-colors border-2 border-transparent hover:border-orange-500"
               >
-                <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <span className="text-white font-bold text-xl">₿</span>
+                <div className="w-12 h-12 mx-auto mb-3 flex items-center justify-center">
+                  <img src={bitcoin} alt="Bitcoin" className="w-12 h-12 object-contain" />
                 </div>
                 <div className="text-white font-medium text-base mb-1">Bitcoin</div>
                 <div className="text-gray-400 text-sm">BTC</div>
@@ -153,8 +158,8 @@ function App() {
                 onClick={() => handlePaymentSelect('litecoin')}
                 className="bg-gray-800 hover:bg-gray-700 rounded-lg p-6 text-center transition-colors border-2 border-transparent hover:border-blue-500"
               >
-                <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <span className="text-white font-bold text-xl">Ł</span>
+                <div className="w-12 h-12 mx-auto mb-3 flex items-center justify-center">
+                  <img src={litcoin} alt="Litecoin" className="w-12 h-12 object-contain" />
                 </div>
                 <div className="text-white font-medium text-base mb-1">Litecoin</div>
                 <div className="text-gray-400 text-sm">LTC</div>
@@ -165,18 +170,16 @@ function App() {
                 onClick={() => handlePaymentSelect('crypto')}
                 className="bg-gray-800 hover:bg-gray-700 rounded-lg p-6 text-center transition-colors border-2 border-transparent hover:border-green-500"
               >
-                <div className="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <div className="flex items-center space-x-0.5">
-                    <div className="w-3 h-3 bg-gray-400 rounded-full"></div>
-                    <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                  </div>
+                {/* Removed grey circle and adjusted icon spacing */}
+                <div className="flex items-center justify-center space-x-2 mb-3">
+                  <img src={ethereum} alt="Ethereum" className="w-8 h-8 object-contain" />
+                  <img src={crypto4} alt="Crypto" className="w-8 h-8 object-contain" />
+                  <img src={crypto3} alt="Crypto" className="w-8 h-8 object-contain" />
                 </div>
                 <div className="text-white font-medium text-base mb-1">Crypto</div>
                 <div className="text-gray-400 text-xs">(ETH, USDC and more)</div>
               </button>
             </div>
-
             {/* Transaction Info */}
             <div className="text-center mb-6">
               <p className="text-gray-300 text-sm mb-4">
@@ -272,10 +275,10 @@ function App() {
             {/* Navigation */}
             <nav className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-8">
-                <a href="#" className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Market</a>
-                <a href="#" className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Support</a>
-                <a href="#" className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Affiliate</a>
-                <a href="#" className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Claims</a>
+                <a href="https://adurite.com/" className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Market</a>
+                <a href="https://adurite.com/market/dota2" className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Support</a>
+                <a href="https://adurite.com/market/transactions/aff-analytics" className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Affiliate</a>
+                <a href="https://adurite.com/claims" className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Claims</a>
               </div>
             </nav>
 
@@ -303,49 +306,61 @@ function App() {
           <div className="flex justify-center space-x-4">
             
             {/* LIMITEDS */}
-            <div className="w-40 h-24 rounded-lg cursor-pointer overflow-hidden transform hover:scale-105 transition-transform">
-              <img 
-                src={limited}
-                alt="Limiteds" 
-                className="w-full h-full object-cover"
-              />
-            </div>
+            {/* LIMITEDS */}
+            <a href="https://adurite.com/">
+              <div className="w-40 h-24 rounded-lg cursor-pointer overflow-hidden transform hover:scale-105 transition-transform">
+                <img 
+                  src={limited}
+                  alt="Limiteds" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </a>
 
             {/* CS:2 */}
-            <div className="w-40 h-24 rounded-lg cursor-pointer overflow-hidden transform hover:scale-105 transition-transform">
-              <img 
-                src={CS} 
-                alt="CS:2" 
-                className="w-full h-full object-cover"
-              />
-            </div>
+            <a href="https://adurite.com/market/csgo">
+              <div className="w-40 h-24 rounded-lg cursor-pointer overflow-hidden transform hover:scale-105 transition-transform">
+                <img 
+                  src={CS} 
+                  alt="CS:2" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </a>
 
             {/* DOTA 2 */}
-            <div className="w-40 h-24 rounded-lg cursor-pointer overflow-hidden transform hover:scale-105 transition-transform">
-              <img 
-                src={DOTA} 
-                alt="DOTA2" 
-                className="w-full h-full object-cover"
-              />
-            </div>
+            <a href="https://adurite.com/market/dota2">
+              <div className="w-40 h-24 rounded-lg cursor-pointer overflow-hidden transform hover:scale-105 transition-transform">
+                <img 
+                  src={DOTA} 
+                  alt="DOTA2" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </a>
 
             {/* RUST */}
-            <div className="w-40 h-24 rounded-lg cursor-pointer overflow-hidden transform hover:scale-105 transition-transform">
-              <img 
-                src={rust} 
-                alt="Rust" 
-                className="w-full h-full object-cover"
-              />
-            </div>
+            <a href="https://adurite.com/market/rust">
+              <div className="w-40 h-24 rounded-lg cursor-pointer overflow-hidden transform hover:scale-105 transition-transform">
+                <img 
+                  src={rust} 
+                  alt="Rust" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </a>
 
             {/* IN-GAME */}
-            <div className="w-40 h-24 rounded-lg cursor-pointer overflow-hidden transform hover:scale-105 transition-transform">
-              <img 
-                src={ingame} 
-                alt="In-Game" 
-                className="w-full h-full object-cover"
-              />
-            </div>
+            <a href="https://roskins.com/">
+              <div className="w-40 h-24 rounded-lg cursor-pointer overflow-hidden transform hover:scale-105 transition-transform">
+                <img 
+                  src={ingame} 
+                  alt="In-Game" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </a>
+
           </div>
         </div>
       </div>
@@ -548,7 +563,7 @@ function App() {
       {/* Payment Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
-          <div className="bg-[#141414] rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+          <div className="bg-black rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
             {/* Modal Header */}
             <div className="relative p-6 border-b border-gray-700">
               <button
