@@ -1,16 +1,12 @@
-import React from 'react';
 import { useState } from 'react';
 import { 
   MessageCircle, 
-  Star, 
   User,
   Github,
   Twitter,
   Youtube,
   X,
-  Search,
-  Copy,
-  ArrowLeft
+  Search
 } from 'lucide-react';
 
 function App() {
@@ -19,7 +15,6 @@ function App() {
   const [showError, setShowError] = useState(false);
   const [currentStep, setCurrentStep] = useState(1);
   const [selectedPayment, setSelectedPayment] = useState('');
-  const [walletAddress, setWalletAddress] = useState('');
   const [transactionId, setTransactionId] = useState('');
 
   const handleSearch = () => {
@@ -29,20 +24,8 @@ function App() {
     }
   };
 
-  const handlePaymentSelect = (paymentType) => {
+  const handlePaymentSelect = (paymentType: string) => {
     setSelectedPayment(paymentType);
-    
-    // Generate mock wallet address and transaction ID based on payment type
-    let mockAddress = '';
-    if (paymentType === 'bitcoin') {
-      mockAddress = '1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa';
-    } else if (paymentType === 'litecoin') {
-      mockAddress = 'ltclQ7guhtduwg9ka74zz7x6a6dk1t2rtg7nexmwc';
-    } else if (paymentType === 'crypto') {
-      mockAddress = '0x742d35Cc6635Cb8532feb5CE6928CCF8a7E42345';
-    }
-    
-    setWalletAddress(mockAddress);
     setTransactionId(`hLhzZH2XsdJfgfSZ5mUUPYPiizARgBwgvDvnJc9p`);
     setCurrentStep(3);
   };
@@ -52,12 +35,11 @@ function App() {
     setCurrentStep(1);
     setSearchUsername('');
     setSelectedPayment('');
-    setWalletAddress('');
     setTransactionId('');
     setShowError(false);
   };
 
-  const copyToClipboard = (text) => {
+  const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
   };
 
@@ -270,15 +252,11 @@ function App() {
     <div className="min-h-screen bg-[#0e0e0e] text-white">
       {/* Header */}
       <header className="bg-[#0e0e0e] border-b border-[#1a1a1a]">
-
-
-
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <div className="flex items-center">
               <img src="src/assets/logo.png" alt="logo" className="h-10 w-auto mr-2" />
-              
             </div>
 
             {/* Navigation */}
@@ -305,69 +283,63 @@ function App() {
                 Log in
               </button>
             </div>
-
-
           </div>
         </div>
       </header>
 
       {/* Game Categories */}
-    <div className="bg-zinc-900 border-b border-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <div className="flex justify-center space-x-4">
-          
-          {/* LIMITEDS */}
-          <div className="w-40 h-24 rounded-lg cursor-pointer overflow-hidden transform hover:scale-105 transition-transform">
-            <img 
-              src="src/assets/limiteds.png" 
-              alt="Limiteds" 
-              className="w-full h-full object-cover"
-            />
-          </div>
+      <div className="bg-zinc-900 border-b border-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="flex justify-center space-x-4">
+            
+            {/* LIMITEDS */}
+            <div className="w-40 h-24 rounded-lg cursor-pointer overflow-hidden transform hover:scale-105 transition-transform">
+              <img 
+                src="src/assets/limiteds.png" 
+                alt="Limiteds" 
+                className="w-full h-full object-cover"
+              />
+            </div>
 
-          {/* CS:2 */}
-          <div className="w-40 h-24 rounded-lg cursor-pointer overflow-hidden transform hover:scale-105 transition-transform">
-            <img 
-              src="src/assets/CS2.png" 
-              alt="CS:2" 
-              className="w-full h-full object-cover"
-            />
-          </div>
+            {/* CS:2 */}
+            <div className="w-40 h-24 rounded-lg cursor-pointer overflow-hidden transform hover:scale-105 transition-transform">
+              <img 
+                src="src/assets/CS2.png" 
+                alt="CS:2" 
+                className="w-full h-full object-cover"
+              />
+            </div>
 
-          {/* DOTA 2 */}
-          <div className="w-40 h-24 rounded-lg cursor-pointer overflow-hidden transform hover:scale-105 transition-transform">
-            <img 
-              src="src/assets/DOTA2.png" 
-              alt="DOTA2" 
-              className="w-full h-full object-cover"
-            />
-          </div>
+            {/* DOTA 2 */}
+            <div className="w-40 h-24 rounded-lg cursor-pointer overflow-hidden transform hover:scale-105 transition-transform">
+              <img 
+                src="src/assets/DOTA2.png" 
+                alt="DOTA2" 
+                className="w-full h-full object-cover"
+              />
+            </div>
 
-          {/* RUST */}
-          <div className="w-40 h-24 rounded-lg cursor-pointer overflow-hidden transform hover:scale-105 transition-transform">
-            <img 
-              src="src/assets/rust.png" 
-              alt="Rust" 
-              className="w-full h-full object-cover"
-            />
-          </div>
+            {/* RUST */}
+            <div className="w-40 h-24 rounded-lg cursor-pointer overflow-hidden transform hover:scale-105 transition-transform">
+              <img 
+                src="src/assets/rust.png" 
+                alt="Rust" 
+                className="w-full h-full object-cover"
+              />
+            </div>
 
-          {/* IN-GAME */}
-          <div className="w-40 h-24 rounded-lg cursor-pointer overflow-hidden transform hover:scale-105 transition-transform">
-            <img 
-              src="src/assets/ingame.png" 
-              alt="In-Game" 
-              className="w-full h-full object-cover"
-            />
+            {/* IN-GAME */}
+            <div className="w-40 h-24 rounded-lg cursor-pointer overflow-hidden transform hover:scale-105 transition-transform">
+              <img 
+                src="src/assets/ingame.png" 
+                alt="In-Game" 
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
-
         </div>
       </div>
-    </div>
 
-
-
-      
       {/* Trustpilot Reviews */}
       <div className="bg-[#0e0e0e] border-b border-[#1a1a1a]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
@@ -414,15 +386,12 @@ function App() {
         </div>
       </div>
 
-
-
       {/* Hero Section */}
       <div
         className="relative h-48 bg-cover bg-center"
         style={{ backgroundImage: "url('src/assets/banner-roblux.png')" }}
       >
       </div>
-
 
       {/* Profile Section */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -440,7 +409,6 @@ function App() {
         </div>
       </div>
 
-      
       {/* LIMITEDS Section */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <h2 className="text-3xl font-bold text-white mb-8">LIMITEDS</h2>
@@ -479,7 +447,6 @@ function App() {
           </div>
         </div>
       </main>
-
 
       {/* Footer */}
       <footer className="bg-zinc-900 border-t border-gray-800 mt-16">
@@ -555,7 +522,7 @@ function App() {
             <p className="text-gray-500 text-xs leading-relaxed max-w-4xl mx-auto">
               Adurite.com's services are not the same, similar or equivalent to Roblox Corporation's products and services and we are not sponsored by, affiliated with, approved by and/or authorized by 
               ROBLOX Corporation whatsoever. Adurite.com is a community led player to player marketplace which is operated by P2P limited item trades purchased by and sold by users, not directly from 
-              the platform or officially from the site/corporation's platform.
+              the platform or officially from the corporation's platform.
             </p>
           </div>
         </div>
