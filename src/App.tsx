@@ -308,7 +308,7 @@ function App() {
             {/* LIMITEDS */}
             {/* LIMITEDS */}
             <a href="https://adurite.com/">
-              <div className="w-40 h-24 rounded-lg cursor-pointer overflow-hidden transform hover:scale-105 transition-transform">
+              <div className="w-full sm:w-40 h-32 sm:h-24 rounded-lg cursor-pointer overflow-hidden transform hover:scale-105 transition-transform">
                 <img 
                   src={limited}
                   alt="Limiteds" 
