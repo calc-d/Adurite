@@ -31,17 +31,10 @@ function App() {
   const [currentStep, setCurrentStep] = useState(1);
   const [selectedPayment, setSelectedPayment] = useState('');
   const [transactionId, setTransactionId] = useState('');
-  const [currentBannerIndex, setCurrentBannerIndex] = useState(0);
   const [currentReviewIndex, setCurrentReviewIndex] = useState(0);
 
   // Auto-scroll banners on mobile
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentBannerIndex((prev) => (prev + 1) % 5); // 5 banners total
-    }, 1000); // Change every 3 seconds
-
-    return () => clearInterval(interval);
-  }, []);
+ 
 
   // Auto-scroll reviews on mobile
   useEffect(() => {
@@ -83,6 +76,7 @@ function App() {
       case 1:
         return (
           <div className="p-4 sm:p-6">
+          
             {/* Username Search */}
             <div className="mb-6 sm:mb-8">
               <h4 className="text-lg font-medium text-white mb-4 text-center">
